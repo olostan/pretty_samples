@@ -3,7 +3,7 @@
 
 /// The pretty_samples library.
 ///
-/// This is an awesome library. More dartdocs go here.
+/// This is an library for Pretty Samples.
 library pretty_samples;
 
 import "package:angular/angular.dart";
@@ -17,12 +17,10 @@ import "dart:js" show context;
 class PrettifyService {
   Completer _loaded = new Completer();
   PrettifyService() {
-    print("Loading Prettify script");
     var script = new ScriptElement();
     script.src = 'packages/pretty_samples/prettify/prettify.js';
     script.type = 'text/javascript';
     script.onLoad.listen((event) {
-      print("Prettify script loaded");
       _loaded.complete();
     });
     document.body.append(script);
@@ -52,7 +50,10 @@ class Sample implements AttachAware{
     return new Future<String>.value(sample.innerHtml);
   }
   Future<String> getSample(String id) {
-    return _http.get(id).then((r)=> r.data);
+    return _http.get(id).then((r)=> r.data).catchError((e)  {
+      print("Can't load $id");
+      return "";
+    });
   }
   String sampleId;
   void attach() {
