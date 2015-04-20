@@ -66,9 +66,12 @@ class Sample implements AttachAware{
     sample  = sanitizer.convert(sample);
     var type = 'html';
     var extensionIdx = sampleId.lastIndexOf('.');
+    var sId = sampleId; // some hack for dart2js (substring error)
+
     if (extensionIdx>-1) {
-      type = sampleId.substring(extensionIdx);
-    }
+      type = sId.substring(extensionIdx);
+    } 
+    if (type == "daart") type = "dart";
     await _service.ensureLoaded();
     sample =  context.callMethod('prettyPrintOne', [sample,type]);
     sample = '<pre class="prettyprint">$sample</pre>';
