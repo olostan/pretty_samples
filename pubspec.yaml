@@ -1,0 +1,14 @@
+name: pretty_samples
+description: >
+  AngularDart component to show code samples prettified
+version: 0.0.1
+author: Valentyn Shybanov <olostan@gmail.com>
+#homepage: https://www.example.com
+dependencies:
+  angular: '>=1.1.1  <1.2.0'
+dev_dependencies:
+  guinness: ">=0.1.17 <0.2.0"
+  unittest: '>=0.11.0  <0.13.0'
+
+transformers:
+  - angular

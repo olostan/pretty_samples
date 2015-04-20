@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sample of using Pretty Samples</title>
+<style>sample { display: none;}</style>
+    <link href="pretty_samples.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    Samples:
+    <div sample="#indoc-sample"></div>
+    <div sample="#indoc-sample2"></div>
+
+    <div sample="pretty_samples.css"></div>
+
+    <div sample="pretty_samples.dart"></div>
+
+    <div sample="samples/channels.go"></div>
+
+
+    <script type="application/dart" src="pretty_samples.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+
+    <sample id="indoc-sample">This is <i>some</i> sample</sample>
+    <sample id="indoc-sample2">This is <span class="test">another</span> sample!</sample>
+
+</body>
+</html>
