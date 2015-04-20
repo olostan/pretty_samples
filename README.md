@@ -33,7 +33,7 @@ You can also reference samples inside same document by IDs:
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/olostan/pretty_samples/issuess
 [dacsslide]: https://github.com/olostan/dacsslide
 [prettyprint]: https://google-code-prettify.googlecode.com/svn/trunk/README.html
 
