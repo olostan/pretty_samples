@@ -27,7 +27,7 @@ class PrettifyService {
 
     var css = new LinkElement();
     css.href = 'packages/pretty_samples/prettify/sons-of-obsidian.css';
-    css.type = 'type="text/css"';
+    css.type = 'text/css';
     css.rel = 'stylesheet';
     document.head.append(css);
   }
