@@ -1,7 +1,7 @@
 name: pretty_samples
 description: >
   AngularDart component to show code samples prettified
-version: 0.0.4
+version: 0.0.5
 author: Valentyn Shybanov <olostan@gmail.com>
 homepage: https://github.com/olostan/pretty_samples
 dependencies:
