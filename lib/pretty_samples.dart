@@ -50,7 +50,7 @@ class Sample implements AttachAware{
     return new Future<String>.value(sample.innerHtml);
   }
   Future<String> getSample(String id) {
-    return _http.get(id).then((r)=> r.data).catchError((e)  {
+    return _http.get(id).then((r)=> r.data.toString()).catchError((e)  {
       print("Can't load $id");
       return "";
     });
@@ -70,7 +70,10 @@ class Sample implements AttachAware{
 
     if (extensionIdx>-1) {
       type = sId.substring(extensionIdx);
-    } 
+    }
+    var attrType = _element.getAttribute('type');
+    if (attrType!=null) type=attrType;
+
     if (type == "daart") type = "dart";
     await _service.ensureLoaded();
     sample =  context.callMethod('prettyPrintOne', [sample,type]);
